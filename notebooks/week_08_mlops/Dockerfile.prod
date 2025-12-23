@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Instalacja zależności
+COPY requirements_prod.txt .
+RUN pip install --no-cache-dir -r requirements_prod.txt
+
+# Kopiowanie kodu Backendu
+COPY app.py .
+
+# Kopiowanie kodu Frontendu
+# Kopiujemy cały folder
+COPY frontend/ ./frontend/
+
+# Kopiowanie skryptu startowego i nadanie uprawnień
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+
+# W chmurze port jest często przydzielany dynamicznie, ale wystawmy domyślne
+EXPOSE 8000
+EXPOSE 8501
+
+# Startujemy przez nasz skrypt
+CMD ["./entrypoint.sh"]
