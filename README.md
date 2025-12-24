@@ -34,6 +34,62 @@ Poniżej znajdują się kluczowe projekty zawarte w tym repozytorium:
 
 ---
 
+## 🛠️ Technologie
+
+Projekt oparty na standardowym stacku Data Science:
+
+- **Python 3.x**
+- **Pandas & NumPy** (Manipulacja danymi i obliczenia)
+- **Scikit-Learn** (Algorytmy ML, Preprocessing, Metryki)
+- **Matplotlib & Seaborn** (Wizualizacja danych)
+- **SciPy** (Testy statystyczne)
+- **PyTorch** (Deep Learning Framework)
+- **Optuna** (Bayesian Optimization)
+
+## 🚀 Jak używać tego podręcznika?
+
+Masz dwie możliwości uruchomienia kodu: szybką (w chmurze) i profesjonalną (lokalnie).
+
+### ☁️ Opcja 1: Google Colab (Bez instalacji)
+
+Najszybszy sposób na naukę. Każdy notatnik w tym repozytorium posiada przycisk **"Open in Colab"** na samej górze.
+
+1.  Otwórz wybrany plik `.ipynb` na liście plików.
+2.  Kliknij przycisk <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab" style="vertical-align: middle">.
+3.  Kod uruchomi się natychmiast na darmowych GPU od Google.
+
+### 💻 Opcja 2: Lokalnie (VS Code + uv)
+
+Zalecane dla inżynierów budujących własne środowisko.
+_Wymaganie wstępne: Zainstaluj [uv](https://github.com/astral-sh/uv) (`pip install uv`)._
+
+1.  **Sklonuj repozytorium:**
+
+    ```bash
+    git clone https://github.com/takzen/financial-ai-engineering-showcase.git
+    cd ai-engineering-handbook
+    ```
+
+2.  **Zainstaluj zależności za pomocą uv:**
+
+    ```bash
+    # Tworzy venv i instaluje wszystkie biblioteki z uv.lock
+    uv sync
+    ```
+
+    Środowisko zostanie automatycznie skonfigurowane z dokładnymi wersjami bibliotek (PyTorch z CUDA, Scikit-Learn, Transformers itp.), co gwarantuje powtarzalność wyników.
+
+3.  **Aktywuj środowisko:**
+
+    ```bash
+    # Windows:
+    .\.venv\Scripts\activate
+    # Linux/Mac:
+    source .venv/bin/activate
+    ```
+
+---
+
 ## 📚 Pełna Mapa Drogowa (Full Bootcamp Roadmap)
 
 Poniżej znajduje się pełny plan szkolenia, które doprowadziło do powstania powyższych rozwiązań. Repozytorium zawiera esencję tych 12 tygodni.
