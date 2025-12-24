@@ -14,7 +14,6 @@ wheels/
 data/*
 !data/.gitkeep
 *.log
-uv.lock
 
 # Data, Raports
 *.pdf
