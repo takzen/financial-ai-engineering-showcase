@@ -67,7 +67,7 @@ _Wymaganie wstępne: Zainstaluj [uv](https://github.com/astral-sh/uv) (`pip inst
 
     ```bash
     git clone https://github.com/takzen/financial-ai-engineering-showcase.git
-    cd ai-engineering-handbook
+    cd ai-engineering-handbook-showcase
     ```
 
 2.  **Zainstaluj zależności za pomocą uv:**
@@ -86,6 +86,38 @@ _Wymaganie wstępne: Zainstaluj [uv](https://github.com/astral-sh/uv) (`pip inst
     .\.venv\Scripts\activate
     # Linux/Mac:
     source .venv/bin/activate
+    ```
+
+4.  **Uruchom Jupyter Notebook:**
+
+    ```bash
+    jupyter notebook
+    ```
+
+    _(Wskazówka: Jeśli używasz VS Code, po prostu otwórz plik `.ipynb` i wybierz kernel `.venv` w prawym górnym rogu)._
+
+---
+
+### ⚙️ Dostosowanie wersji CUDA (Rozwiązywanie problemów)
+
+Projekt jest skonfigurowany pod najnowsze sterowniki **CUDA 13.0**. Ustawienia te znajdują się na samym dole pliku `pyproject.toml`. Jeśli masz starszą kartę graficzną lub system macOS (CPU), musisz je zmienić.
+
+**Jak zmienić wersję?**
+
+1.  Otwórz plik `pyproject.toml`.
+2.  Znajdź sekcję `[[tool.uv.index]]` na końcu pliku.
+3.  Podmień adres URL (`url`) oraz nazwę (`name/index`) wg tabeli:
+
+    | Wersja        | URL do wpisania                          | Kompatybilność                       |
+    | :------------ | :--------------------------------------- | :----------------------------------- |
+    | **CUDA 13.0** | `https://download.pytorch.org/whl/cu130` | RTX 30xx/40xx/50xx (Nowe sterowniki) |
+    | **CUDA 12.6** | `https://download.pytorch.org/whl/cu126` | Większość kart (Stabilne)            |
+    | **CUDA 12.4** | `https://download.pytorch.org/whl/cu124` | Starsze systemy                      |
+    | **CPU (Mac)** | `https://download.pytorch.org/whl/cpu`   | MacBook M1/M2/M3 / Brak GPU          |
+
+4.  Po edycji pliku wpisz w terminalu:
+    ```bash
+    uv sync
     ```
 
 ---

@@ -1,5 +1,5 @@
 [project]
-name = "financial-ai-engineering"
+name = "financial-ai-engineering-showcase"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -54,7 +54,7 @@ dependencies = [
     "tabulate>=0.9.0",
     "tavily-python>=0.7.14",
     "textblob>=0.19.0",
-    "torch>=2.9.1",
+    "torch",
     "torch-geometric>=2.7.0",
     "tqdm>=4.67.1",
     "transformers>=4.57.3",
@@ -64,3 +64,13 @@ dependencies = [
     "xgboost",
     "yfinance>=0.2.66",
 ]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }
+torchvision = { index = "pytorch-cu130" }
+torchaudio = { index = "pytorch-cu130" }
